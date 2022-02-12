@@ -10,7 +10,7 @@ function DatePage() {
 
   React.useEffect(() => {
     async function fetchApod() {
-      const resp = await fetch("https://api.nasa.gov/planetary/apod?start_date=2022-02-02&end_date=2022-02-02&api_key=ZNZOJj0Nq1kjV9IBBHp5qNWaAfThwOh4Kn98vhuY"
+      const resp = await fetch("https://api.nasa.gov/planetary/apod?start_date=2022-02-01&end_date=2022-02-01&api_key=ZNZOJj0Nq1kjV9IBBHp5qNWaAfThwOh4Kn98vhuY"
       );
       const data = await resp.json();
       setApod(data);
@@ -27,7 +27,7 @@ function DatePage() {
           {apod ? <h2>{apod[0].title}</h2> : <p>Loading image from space...</p>}
         </div> */}
         <Link to="/calendar">{"⬅ Back to calendar"}</Link>
-        {apod ? <InfoCard {...apod} /> : <p>Loading image from space...</p>}
+        {apod ? <InfoCard {...apod[0]} /> : <p>Loading image from space...</p>}
       </div>
     </section>
   )

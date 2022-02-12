@@ -9,6 +9,7 @@ function Home() {
             </span>
            Welcome to the LSS (Local Space Station)
           </p>
+          
         </div>
       </div>
     </section>
