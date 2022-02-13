@@ -1,8 +1,8 @@
 // import React from "react"
 import Calendar from "react-calendar";
 import React from "react"
-// import { Redirect } from "react-router";
 import { useNavigate } from "react-router-dom";
+import CalendarImages from "./CalendarImages"
 
 function CalendarPage() {
   // const [apod, setApod] = React.useState(undefined);
@@ -31,23 +31,31 @@ function CalendarPage() {
     navigate("/")
   }
 
+  console.log(<Calendar></Calendar>)
+
   return (
-    <Calendar
-      // FUNCTIONS
-      onChange={onChange}
-      onClickDay={onClickDay}
-      value={value}
+    <>
+      <h1>Welcome to our Calendar</h1>
+      <img src="https://media4.giphy.com/media/l0Iych4GHWMRxci2I/giphy.gif?cid=790b761194122cfca4d97229dc5a95369c32bf677d08d9ad&rid=giphy.gif&ct=g" />
+      <Calendar
+        // FUNCTIONS
+        onChange={onChange}
+        onClickDay={onClickDay}
+        value={value}
 
-      // SETTINGS
-      // tileContent={<img src={apod[0].url} />}
-      // titleContent={apod ? <img src={apod[0].url} alt={apod[0].title} /> : <p>Loading image from space...</p>}
+        // SETTINGS
+        minDetail="month" // this means users can only see a month view (change to year to have year and month options)
+        maxDate={new Date()} // this stops users selecting future dates
 
-      minDetail="month" // this means users can only see a month view (change to year to have year and month options)
-      maxDate={new Date()} /      tileContent={<img src="https://media4.giphy.com/media/l0Iych4GHWMRxci2I/giphy.gif?cid=790b761194122cfca4d97229dc5a95369c32bf677d08d9ad&rid=giphy.gif&ct=g"/>}
-      // tileContent={apod ? <CalendarImages {...apod[0]} /> : <p>Loading image from space...</p>}/ this stops users selecting future dates
-      selectRange={true} // this allows users to select a range of dates - we will use this to show the pictures from all of these dates
-      defaultView="month"
-    />
+        // tileContent={({ date, view }) => view === "month" && date.getDate() === 1 ? <img src={apod ? apod[0].url : "https://miro.medium.com/max/880/0*H3jZONKqRuAAeHnG.jpg"} /> : null}
+        tileContent={<CalendarImages />}
+
+        // tileContent={tileContentGenerator}
+        
+        selectRange={true} // this allows users to select a range of dates - we will use this to show the pictures from all of these dates
+        defaultView="month"
+      />
+    </>
   );
 
 }
