@@ -28,7 +28,6 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/calendar" element={<CalendarPage />}/>
             <Route path="/datepage" element={<DatePage />}/>
-            {/* future: change datepage to :date */}
           </Route>
         </Routes>
       </Router>

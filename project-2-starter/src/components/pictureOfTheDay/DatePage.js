@@ -10,8 +10,7 @@ function DatePage() {
 
   React.useEffect(() => {
     async function fetchApod() {
-      const resp = await fetch("https://api.nasa.gov/planetary/apod?start_date=2022-02-01&end_date=2022-02-01&api_key=ZNZOJj0Nq1kjV9IBBHp5qNWaAfThwOh4Kn98vhuY"
-      );
+      const resp = await fetch("https://api.nasa.gov/planetary/apod?date=2022-02-14&api_key=ZNZOJj0Nq1kjV9IBBHp5qNWaAfThwOh4Kn98vhuY");
       const data = await resp.json();
       setApod(data);
     }

@@ -1,31 +1,18 @@
 // Returns the images for the calendar month displayed
 
 import React from "react"
+// import Calendar from "react-calendar"
 
-
-
-
-function CalendarImage () {
-// const { dateImage }
-    const [apod, setApod] = React.useState(undefined);
-
-    React.useEffect(() => {
-        async function fetchApod() {
-          const resp = await fetch("https://api.nasa.gov/planetary/apod?start_date=2022-02-02&end_date=2022-02-02&api_key=ZNZOJj0Nq1kjV9IBBHp5qNWaAfThwOh4Kn98vhuY"
-          );
-          const data = await resp.json();
-          setApod(data);
-          // console.log(apod)
-        }
-        fetchApod();
-      }, []);
-
-    return (
-      ({ date, view }) => view === "month" && date.getDate() === 1 ? <img display-name="hi" src={apod ? apod[0].url : "https://miro.medium.com/max/880/0*H3jZONKqRuAAeHnG.jpg"} /> : null
-    )
-    
+function CalendarImages({ url, media_type, thumbnail_url, title }) {
+  return (
+    <>
+    {media_type === "video" ? (
+       <img src={thumbnail_url} alt={title} width="100" height="100"/>
+    ) : (
+          <img src={url} alt={title} width="100" height="100"/>
+    )}
+    </>
+)
 }
 
-export default CalendarImage
-
-// tileContent={<img src={apod ? apod[0].url : "https://miro.medium.com/max/880/0*H3jZONKqRuAAeHnG.jpg"} />}
+export default CalendarImages
