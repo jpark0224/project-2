@@ -19,7 +19,6 @@ function CalendarPage() {
     fetchApod();
   }, []);
 
-
   function onChange(nextValue) {
     setValue(nextValue);
     // this is allowing to navigate the calendar by clicking eg. a day from a different month
@@ -27,16 +26,29 @@ function CalendarPage() {
 
   function onClickDay(value) {
     // point to the DatePage component
+    const calendarDate = (value.toISOString().split("T")[0])
+    const dateToString = calendarDate.toString()
     console.log("date clicked")
-    // navigate(`/datepage/${date}`)
-    console.log(value)
+    navigate(`/datepage/${dateToString}`)
+    console.log(dateToString)
+
   }
+
+  function onActiveStartDateChange(action) {
+    let calendarStartDate = action.activeStartDate;
+    let month = action.activeStartDate.getMonth();
+    let year = action.activeStartDate.getFullYear();
+    let startDate = action.activeStartDate.toISOString().split("T")[0]
+    let lastDate = new Date(year, month + 1, 0).toISOString().split("T")[0]
+    console.log(calendarStartDate, month, startDate, lastDate);
+    // this doesn't work for months prior to November 2021
+  } 
 
   function decideImage({ date }) {
     if (date <= new Date()) {
       return (
         <>
-        {apod ? <CalendarImages {...apod[date.getDate() - 1]} /> : <p>Loading image from space...</p>}
+          {apod ? <CalendarImages {...apod[date.getDate() - 1]} /> : <p>Loading image from space...</p>}
         </>
       )
     }
@@ -50,6 +62,7 @@ function CalendarPage() {
         onChange={onChange}
         onClickDay={onClickDay}
         value={value}
+        onActiveStartDateChange={onActiveStartDateChange}
 
         // SETTINGS
         minDetail="month" // this means users can only see a month view (change to year to have year and month options)
@@ -66,7 +79,7 @@ function CalendarPage() {
       <img src="https://media4.giphy.com/media/l0Iych4GHWMRxci2I/giphy.gif?cid=790b761194122cfca4d97229dc5a95369c32bf677d08d9ad&rid=giphy.gif&ct=g" />
     </>
   );
-
 }
+
 
 export default CalendarPage

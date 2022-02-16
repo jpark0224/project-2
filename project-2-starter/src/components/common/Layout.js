@@ -16,9 +16,9 @@ function Layout() {
               <Link to="/calendar" className="navbar-item">
                 Calendar
               </Link>
-              <Link to="/datepage" className="navbar-item">
+              {/* <Link to="/datepage" className="navbar-item">
                 Date Page
-              </Link>
+              </Link> */}
             </div>
           </div>
         </nav>

@@ -27,7 +27,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/calendar" element={<CalendarPage />}/>
-            <Route path="/datepage" element={<DatePage />}/>
+            <Route path="/datepage/:date" element={<DatePage />}/>
           </Route>
         </Routes>
       </Router>

@@ -1,21 +1,23 @@
 // equivalent to ShowCheese
 
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import InfoCard from "./InfoCard"
 
+
 function DatePage() {
-  // const { date } = useParams();
+  const { date } = useParams();
   const [apod, setApod] = React.useState(undefined);
 
   React.useEffect(() => {
     async function fetchApod() {
-      const resp = await fetch("https://api.nasa.gov/planetary/apod?date=2022-02-14&api_key=ZNZOJj0Nq1kjV9IBBHp5qNWaAfThwOh4Kn98vhuY");
+      const resp = await fetch(`https://api.nasa.gov/planetary/apod?date=${date}&api_key=ZNZOJj0Nq1kjV9IBBHp5qNWaAfThwOh4Kn98vhuY`);
       const data = await resp.json();
       setApod(data);
+      console.log(resp)
     }
     fetchApod();
-  }, []);
+  }, [date]);
 
   return (
     <section className="section">
@@ -26,7 +28,7 @@ function DatePage() {
           {apod ? <h2>{apod[0].title}</h2> : <p>Loading image from space...</p>}
         </div> */}
         <Link to="/calendar">{"⬅ Back to calendar"}</Link>
-        {apod ? <InfoCard {...apod[0]} /> : <p>Loading image from space...</p>}
+        {apod ? <InfoCard {...apod} /> : <p>Loading image from space...</p>}
       </div>
     </section>
   )
