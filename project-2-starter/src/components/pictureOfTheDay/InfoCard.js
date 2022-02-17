@@ -2,17 +2,16 @@ import React from "react"
 
 function InfoCard ({ title, date, url, media_type, explanation }) {
   return (
-    <div className="column is-one-quarter-desktop is-one-third-tablet">
+    <div className="column is-one-half-desktop is-one-third-tablet">
       <div className="card">
         <div className="card-header">
-          <div className="card-header-title">{title}</div>
-          <p>{date}</p>
+          <div className="card-header-title is-info">{title}</div>
         </div>
         <div className="card-image">
           {media_type === "video" ? (
             <iframe
-              width="560"
-              height="315"
+              width="500"
+              height="300"
               src={url}
               title="YouTube video player"
               frameBorder="0"
@@ -24,8 +23,9 @@ function InfoCard ({ title, date, url, media_type, explanation }) {
           )}
         </div>
         <div className="card-content">
-          <p>{explanation}</p>
+          <p className="message-body is-success">{explanation}</p>
         </div>
+        <div className="card-footer-item">{date}</div>
       </div>
     </div>
   )

@@ -8,16 +8,26 @@ function CalendarPage() {
   const navigate = useNavigate()
   const [value, setValue] = React.useState(new Date());
   const [apod, setApod] = React.useState(undefined);
-  // const { month } = useParams()
+  let date = new Date()
+   let firstDateOfCurrentMonth = new Date(date.getFullYear(), date.getMonth(), 1)
+  let summerTimeAdjustedFirstDate = new Date(
+    firstDateOfCurrentMonth
+      .getTime() - firstDateOfCurrentMonth.getTimezoneOffset() * 60000
+  ).toISOString().split("T")[0]
+  let formattedToday = new Date(
+    date
+      .getTime() - date.getTimezoneOffset() * 60000
+  ).toISOString().split("T")[0]
+  const [formattedDate, setDate] = React.useState(summerTimeAdjustedFirstDate);
 
   React.useEffect(() => {
     async function fetchApod() {
-      const resp = await fetch(`https://api.nasa.gov/planetary/apod?start_date=2022-02-01&thumbs=true&api_key=ZNZOJj0Nq1kjV9IBBHp5qNWaAfThwOh4Kn98vhuY`);
+      const resp = await fetch(`https://api.nasa.gov/planetary/apod?start_date=${formattedDate}&thumbs=true&api_key=ZNZOJj0Nq1kjV9IBBHp5qNWaAfThwOh4Kn98vhuY`);
       const data = await resp.json();
       setApod(data);
     }
     fetchApod();
-  }, []);
+  }, [formattedDate]);
 
   function onChange(nextValue) {
     setValue(nextValue);
@@ -26,7 +36,10 @@ function CalendarPage() {
 
   function onClickDay(value) {
     // point to the DatePage component
-    const calendarDate = (value.toISOString().split("T")[0])
+    const calendarDate = new Date(
+      value.getTime() -
+      value.getTimezoneOffset() * 60000
+    ).toISOString().split('T')[0]
     const dateToString = calendarDate.toString()
     console.log("date clicked")
     navigate(`/datepage/${dateToString}`)
@@ -35,13 +48,19 @@ function CalendarPage() {
   }
 
   function onActiveStartDateChange(action) {
-    let calendarStartDate = action.activeStartDate;
-    let month = action.activeStartDate.getMonth();
-    let year = action.activeStartDate.getFullYear();
-    let startDate = action.activeStartDate.toISOString().split("T")[0]
-    let lastDate = new Date(year, month + 1, 0).toISOString().split("T")[0]
-    console.log(calendarStartDate, month, startDate, lastDate);
-    // this doesn't work for months prior to November 2021
+    let startDate = new Date(
+  action.activeStartDate.getTime() -
+    action.activeStartDate.getTimezoneOffset() * 60000
+)
+    let formattedStartDate = startDate.toISOString().split('T')[0]
+    let lastDate = new Date(startDate.getFullYear()
+, startDate.getMonth()
+ + 1, 0)
+    let formattedLastDate = new Date(
+  lastDate.getTime() - lastDate.getTimezoneOffset() * 60000
+).toISOString().split("T")[0]
+    console.log(formattedStartDate, formattedLastDate);
+    setDate(formattedStartDate)
   } 
 
   function decideImage({ date }) {
@@ -56,7 +75,7 @@ function CalendarPage() {
 
   return (
     <>
-      <h1>Welcome to our Calendar</h1>
+      <h1 className="title bold has-text-centered">Welcome to our Calendar</h1>
       <Calendar
         // FUNCTIONS
         onChange={onChange}
@@ -76,7 +95,11 @@ function CalendarPage() {
         defaultView="month"
         showNeighboringMonth={false}
       />
-      <img src="https://media4.giphy.com/media/l0Iych4GHWMRxci2I/giphy.gif?cid=790b761194122cfca4d97229dc5a95369c32bf677d08d9ad&rid=giphy.gif&ct=g" />
+      <div className="has-text-centered">
+        <img width="500"
+          height="300" src="https://media4.giphy.com/media/l0Iych4GHWMRxci2I/giphy.gif?cid=790b761194122cfca4d97229dc5a95369c32bf677d08d9ad&rid=giphy.gif&ct=g" />
+      </div>
+      
     </>
   );
 }

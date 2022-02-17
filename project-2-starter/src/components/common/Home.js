@@ -3,13 +3,15 @@ function Home() {
     <section className="hero is-fullheight-with-navbar is-warning">
       <div className="hero-body">
         <div className="container">
-          <p className="title is-1 has-text-centered has-text-black">
-            <span role="img" aria-label="logo" className="logo-emoji">
-              
-            </span>
-           Welcome to the LSS (Local Space Station)
-          </p>
-          
+          <div className="has-text-centered">
+            <img className="has-text-centered" width="500"
+              height="300" src="https://media4.giphy.com/media/l0Iych4GHWMRxci2I/giphy.gif?cid=790b761194122cfca4d97229dc5a95369c32bf677d08d9ad&rid=giphy.gif&ct=g" alt="space dog" />
+          </div>
+          <div style={{margin:`20px`}}>
+            <p className="title is-1 has-text-centered has-text-black">
+              Welcome to the LSS (Local Space Station)
+            </p>
+          </div>
         </div>
       </div>
     </section>

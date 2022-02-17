@@ -1,8 +1,8 @@
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #2: Reacathon
 
-## Overview
+## Welcome to the Local Space Station 
 
-The second project is to **build a React application** that consumes a **public API**.
+This is our second project with the GA Softwarre Engineering Immersive program. We had to **build a React application** that consumes a **public API**. The API we chose was 
 
 ### Technical Requirements
 
@@ -23,10 +23,11 @@ Your app must:
 * A **git repository hosted on Github**, with a link to your hosted project, and frequent commits dating back to the _very beginning_ of the project
 * **A `readme.md` file** with:
   * Explanations of the **technologies** used
-    * A couple of paragraphs about the **general approach you took**
+    * **general approach we took**
     * **Installation instructions** for any dependencies
-    * Link to your **wireframes** – sketches of major views / interfaces in your application
-   * Descriptions of any **unsolved problems** or **major hurdles** your team had to overcome
+    * Link to your **wireframes** – sketches of major views / interfaces in your application 
+    * Link to our [wireframe] (https://s3.amazonaws.com/shecodesio-production/uploads/files/000/027/401/original/wireframe-for_project-2.png?1645095611)
+   * **unsolved problems** or **major hurdles** your team had to overcome. 
 
 ---
 
@@ -45,9 +46,12 @@ Your app must:
 
 ---
 
-## Useful Resources
+## Resources Used
 
 * **[React](https://reactjs.org/)**
+* **[React Calendar] ()
+* **[React Router]  ()
+* **[Bulma] ()
 
 ---
 
