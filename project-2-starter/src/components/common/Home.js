@@ -11,6 +11,7 @@ function Home() {
             <p className="title is-1 has-text-centered has-text-black">
               Welcome to the LSS (Local Space Station)
             </p>
+            <p className="subtitle has-text-centered">a calendar of images from space...</p>
           </div>
         </div>
       </div>

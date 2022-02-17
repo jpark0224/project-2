@@ -1,13 +1,12 @@
 import React from "react"
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
 
 function InfoCard ({ title, date, url, media_type, explanation }) {
   return (
-    <div className="column is-one-half-desktop is-one-third-tablet">
-      <div className="card">
-        <div className="card-header">
-          <div className="card-header-title is-info">{title}</div>
-        </div>
-        <div className="card-image">
+    <div className="columns">
+      <div className="column is-half">
+        <div>
           {media_type === "video" ? (
             <iframe
               width="500"
@@ -22,12 +21,16 @@ function InfoCard ({ title, date, url, media_type, explanation }) {
             <img src={url} alt={title} />
           )}
         </div>
-        <div className="card-content">
-          <p className="message-body is-success">{explanation}</p>
-        </div>
-        <div className="card-footer-item">{date}</div>
       </div>
-    </div>
+      <div className="column is-half">
+        <div className="card">
+            <div className="card-header title">{title}</div>
+              <p className="message-body">{explanation}</p>
+          <div className="card-footer-item card-footer">{date}</div>
+        </div>
+          </div>
+        </div>
+  
   )
 }
 

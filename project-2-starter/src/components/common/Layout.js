@@ -5,7 +5,8 @@ import React from "react";
 
 function Layout() {
   return (
-    <>
+    <section>
+       
       <header>
         <nav className="navbar is-info">
           <div className="container">
@@ -25,12 +26,13 @@ function Layout() {
       </header>
       <main>
         <Outlet />
-        <footer className="hero is-dark is-footer-item has-text-centered" >
-          <p style={{padding:`20px`}}>✨ Made with love by Julie, Laura, and Rachel 🚀 project 2 sei-flex-22-ldn 🌙 </p>
-        </footer>
       </main>
-      
-    </>
+      <div>
+        <footer className="hero is-warning is-footer-item has-text-centered">
+          <p style={{ padding: `20px` }}>✨ Made with love by Julie, Laura, and Rachel 🚀 project 2 sei-flex-22-ldn 🌙 </p>
+        </footer>
+      </div>
+    </ section>
   );
 }
 

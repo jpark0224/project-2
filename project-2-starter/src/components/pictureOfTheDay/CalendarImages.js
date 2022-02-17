@@ -7,9 +7,9 @@ function CalendarImages({ url, media_type, thumbnail_url, title }) {
   return (
     <>
     {media_type === "video" ? (
-       <img src={thumbnail_url} alt={title} width="100" height="100"/>
+       <img className="thumbnail" src={thumbnail_url} alt={title} />
     ) : (
-          <img src={url} alt={title} width="100" height="100"/>
+          <img className = 'thumbnail' src={url} alt={title} />
     )}
     </>
 )

@@ -3,6 +3,7 @@ import Calendar from "react-calendar";
 import React from "react"
 import { useNavigate } from "react-router-dom";
 import CalendarImages from "./CalendarImages"
+// -- import 'react-calendar/dist/Calendar.css' -- // a default styling package
 
 function CalendarPage() {
   const navigate = useNavigate()
@@ -18,16 +19,17 @@ function CalendarPage() {
     date
       .getTime() - date.getTimezoneOffset() * 60000
   ).toISOString().split("T")[0]
-  const [formattedDate, setDate] = React.useState(summerTimeAdjustedFirstDate);
+  const [formattedStartDate, setStartDate] = React.useState(summerTimeAdjustedFirstDate);
+  const [formattedEndDate, setEndDate] = React.useState(formattedToday);
 
   React.useEffect(() => {
     async function fetchApod() {
-      const resp = await fetch(`https://api.nasa.gov/planetary/apod?start_date=${formattedDate}&thumbs=true&api_key=ZNZOJj0Nq1kjV9IBBHp5qNWaAfThwOh4Kn98vhuY`);
+      const resp = await fetch(`https://api.nasa.gov/planetary/apod?start_date=${formattedStartDate}&end_date=${formattedEndDate}&thumbs=true&api_key=ZNZOJj0Nq1kjV9IBBHp5qNWaAfThwOh4Kn98vhuY`);
       const data = await resp.json();
       setApod(data);
     }
-    fetchApod();
-  }, [formattedDate]);
+     fetchApod();
+  }, [formattedStartDate, formattedEndDate]);
 
   function onChange(nextValue) {
     setValue(nextValue);
@@ -44,7 +46,6 @@ function CalendarPage() {
     console.log("date clicked")
     navigate(`/datepage/${dateToString}`)
     console.log(dateToString)
-
   }
 
   function onActiveStartDateChange(action) {
@@ -59,15 +60,16 @@ function CalendarPage() {
     let formattedLastDate = new Date(
   lastDate.getTime() - lastDate.getTimezoneOffset() * 60000
 ).toISOString().split("T")[0]
-    console.log(formattedStartDate, formattedLastDate);
-    setDate(formattedStartDate)
+    setApod(undefined);
+    setStartDate(formattedStartDate)
+    setEndDate(formattedLastDate)
   } 
 
   function decideImage({ date }) {
     if (date <= new Date()) {
       return (
         <>
-          {apod ? <CalendarImages {...apod[date.getDate() - 1]} /> : <p>Loading image from space...</p>}
+          {apod ? <CalendarImages {...apod[date.getDate() - 1]} /> : <img src="https://cdn.dribbble.com/users/1260892/screenshots/6529031/planets.gif" alt="loading"/> }
         </>
       )
     }
@@ -76,6 +78,7 @@ function CalendarPage() {
   return (
     <>
       <h1 className="title bold has-text-centered">Welcome to our Calendar</h1>
+      <div className="calendarContainer">
       <Calendar
         // FUNCTIONS
         onChange={onChange}
@@ -94,7 +97,11 @@ function CalendarPage() {
         selectRange={true} // this allows users to select a range of dates - we will use this to show the pictures from all of these dates
         defaultView="month"
         showNeighboringMonth={false}
-      />
+
+        className={['react-calendar']} 
+        tileClassName="tile"
+        />
+        </div>
       <div className="has-text-centered">
         <img width="500"
           height="300" src="https://media4.giphy.com/media/l0Iych4GHWMRxci2I/giphy.gif?cid=790b761194122cfca4d97229dc5a95369c32bf677d08d9ad&rid=giphy.gif&ct=g" />
