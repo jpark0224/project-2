@@ -77,7 +77,8 @@ function CalendarPage() {
 
   return (
     <>
-      <h1 className="title bold has-text-centered">Welcome to our Calendar</h1>
+      <h1 style={{ margin: `2rem` }} className="title bold has-text-centered">Space Calendar </h1>
+      <h2 className="subtitle has-text-centered">✨ our universe is beautiful✨  click on one of NASA's images of the day to learn more! 🚀</h2>
       <div className="calendarContainer">
       <Calendar
         // FUNCTIONS
@@ -103,10 +104,14 @@ function CalendarPage() {
         />
         </div>
       <div className="has-text-centered">
-        <img width="500"
-          height="300" src="https://media4.giphy.com/media/l0Iych4GHWMRxci2I/giphy.gif?cid=790b761194122cfca4d97229dc5a95369c32bf677d08d9ad&rid=giphy.gif&ct=g" />
+        <img style={{ padding: `1rem` }}width="400"
+          height="200" src="https://media4.giphy.com/media/l0Iych4GHWMRxci2I/giphy.gif?cid=790b761194122cfca4d97229dc5a95369c32bf677d08d9ad&rid=giphy.gif&ct=g" />
       </div>
-      
+      <footer>
+        <div className="content has-text-centered">
+            <p style={{padding: `1rem`}}>✨ Made with love by Julie, Laura, and Rachel 🚀 project 2 GA-sei-flex-22-ldn 🌙 </p>
+          </div>
+      </footer> 
     </>
   );
 }

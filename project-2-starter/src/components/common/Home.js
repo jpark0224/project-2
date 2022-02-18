@@ -14,7 +14,14 @@ function Home() {
             <p className="subtitle has-text-centered">a calendar of images from space...</p>
           </div>
         </div>
-      </div>
+        </div>
+        <footer className="footer">
+          <div className="container">
+            <div className="content has-text-centered">
+            <p style={{ padding: `2rem` }}>✨ Made with love by Julie, Laura, and Rachel 🚀 project 2 GA-sei-flex-22-ldn 🌙 </p>
+            </div>
+          </div>
+        </footer> 
     </section>
   )
 }
