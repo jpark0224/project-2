@@ -19,28 +19,42 @@ function DatePage() {
 
   function previousDate(date) {
     
-    let newDate = new Date(date);
-    console.log(newDate)
-    let yesterday = new Date(newDate.setDate(newDate.getDate() - 1))
-    console.log(yesterday);
+    function getYesterday (date) {
+      let newDate = new Date(date);
+      let yesterday = new Date(newDate.setDate(newDate.getDate() - 1))
+      let tempYesterday = new Date(
+        yesterday.getTime() -
+        yesterday.getTimezoneOffset() * 60000
+      )
+      return tempYesterday.toISOString().split('T')[0]
+    }
 
-    console.log('current page is /datepage/'.concat(date))
-    console.log("we're trying to get to /datepage/".concat(date.substring(0, date.length - 1).concat("1")))
-    return ("/datepage/".concat(date.substring(0, date.length - 1).concat("1")))
+    console.log(getYesterday(date))
+    return (`/datepage/${getYesterday(date)}`)
+
+    // console.log('current page is /datepage/'.concat(date))
+    // console.log("we're trying to get to /datepage/".concat(date.substring(0, date.length - 1).concat("1")))
+    // return ("/datepage/".concat(date.substring(0, date.length - 1).concat("1")))
   }
-
+  
   function nextDate(date) {
-    let newDate = new Date(date)
-    console.log(newDate)
-    let tomorrow = new Date(newDate.setDate(newDate.getDate() + 1))
-    console.log(tomorrow)
+    function getTomorrow (date) {
+      let newDate = new Date(date);
+      let tomorrow = new Date(newDate.setDate(newDate.getDate() + 1))
+      let tempTomorrow = new Date(
+        tomorrow.getTime() -
+        tomorrow.getTimezoneOffset() * 60000
+      )
+      return tempTomorrow.toISOString().split('T')[0]
+    }
 
-    console.log("current page is /datepage/".concat(date))
-    console.log("we're trying to get to /datepage/".concat(date.substring(0, date.length - 1).concat("5")))
-    return ("/datepage/".concat(date.substring(0, date.length - 1).concat("5")))
+    console.log(getTomorrow(date))
+    return (`/datepage/${getTomorrow(date)}`)
+
+    // console.log("current page is /datepage/".concat(date))
+    // console.log("we're trying to get to /datepage/".concat(date.substring(0, date.length - 1).concat("5")))
+    // return ("/datepage/".concat(date.substring(0, date.length - 1).concat("5")))
   }
-
-  console.log(date)
 
   return (
     <section className="section">
@@ -54,7 +68,7 @@ function DatePage() {
       </div>
       <div className="has-text-centered">
         <img style={{ padding: `2rem` }} width="350"
-          height="175" src="https://media4.giphy.com/media/l0Iych4GHWMRxci2I/giphy.gif?cid=790b761194122cfca4d97229dc5a95369c32bf677d08d9ad&rid=giphy.gif&ct=g" />
+          height="175" src="https://media4.giphy.com/media/l0Iych4GHWMRxci2I/giphy.gif?cid=790b761194122cfca4d97229dc5a95369c32bf677d08d9ad&rid=giphy.gif&ct=g" alt="space dog"/>
       </div>
       <footer>
         <div className="container">
