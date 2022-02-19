@@ -6,14 +6,16 @@
   padding: none;
 }
 
-.thumbnail {
+.thumbnail, .loadingImg {
     width: 100px;
     height: 100px;
+    object-fit: cover;
+    padding: 5px;
 }
 
 .react-calendar { 
-    width: 60vw;
-    max-width: 100%;
+    width: 50vw;
+    height: auto;
     background-color: #fff;
     color: #222;
     border-radius: 8px;
@@ -109,9 +111,14 @@
   background-color: #f0f0f0;
 }
 
-// .tile {
-//   background-color: red
-// }
+.tile {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: 120px;
+  justify-content: center;
+  align-items: center;
+}
 
 .react-calendar__tile:enabled:hover,
 .react-calendar__tile:enabled:focus {

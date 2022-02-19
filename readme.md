@@ -2,23 +2,23 @@
 
 ## Welcome to the Local Space Station 
 
-This is our second project with the GA Softwarre Engineering Immersive program. We had to **build a React application** that consumes a **public API**. The API we chose was 
+This is our second project with the GA Softwarre Engineering Immersive Program (SEI22-Flex-LDN). We had to **build a React application** that consumes a **public API**. The API we chose was NASA's 
 
 ### Technical Requirements
 
-Your app must:
+Our app had to:
 
-* **Consume a public API** – this could be anything but it must make sense for your project.
-* **The app should include a router** - with several "pages".
-* **Include wireframes** - that you designed before building the app.
-* Have **semantically clean HTML** - you make sure you write HTML that makes structural sense rather than thinking about how it might look, which is the job of CSS.
+* **Consume a public API** 
+* **Include a router** - with several "pages".
+* **Include wireframes** - that we designed before building the app.
+* Have **semantically clean HTML**.
 * **Be deployed online** and accessible to the public.
 
 ---
 
-## Necessary Deliverables
+## About our app
 
-* A **working application**, hosted somewhere on the internet
+* Local Space Station consumes **[NASA Astronomy Photo of the Day]()** **working application**, hosted somewhere on the internet
 * A **link to your hosted working app** in the URL section of your Github repo
 * A **git repository hosted on Github**, with a link to your hosted project, and frequent commits dating back to the _very beginning_ of the project
 * **A `readme.md` file** with:
@@ -26,7 +26,7 @@ Your app must:
     * **general approach we took**
     * **Installation instructions** for any dependencies
     * Link to your **wireframes** – sketches of major views / interfaces in your application 
-    * Link to our [wireframe] (https://s3.amazonaws.com/shecodesio-production/uploads/files/000/027/401/original/wireframe-for_project-2.png?1645095611)
+    * Link to our **[wireframe] (https://s3.amazonaws.com/shecodesio-production/uploads/files/000/027/401/original/wireframe-for_project-2.png?1645095611)**
    * **unsolved problems** or **major hurdles** your team had to overcome. 
 
 ---
@@ -49,12 +49,13 @@ Your app must:
 ## Resources Used
 
 * **[React](https://reactjs.org/)**
-* **[React Calendar] ()
-* **[React Router]  ()
-* **[Bulma] ()
+* **[React Calendar] ()**
+* **[React Router]  ()**
+* **[Bulma] ()**
+* **[Sass]()**
 
 ---
 
-## Project End
+## Project Start and End
 
-* There will be a presentation next Saturday at this time, where you'll be presenting your app to the group, what your app does, and what were the major obstacles you faced.
+* This project started on 

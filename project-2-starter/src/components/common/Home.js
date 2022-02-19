@@ -1,3 +1,5 @@
+//this is our Home page
+
 function Home() {
   return (
     <section className="hero is-fullheight-with-navbar is-warning">

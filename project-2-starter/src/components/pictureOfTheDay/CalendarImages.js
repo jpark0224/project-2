@@ -1,7 +1,7 @@
 // Returns the images for the calendar month displayed
 
 import React from "react"
-// import Calendar from "react-calendar"
+
 
 function CalendarImages({ url, media_type, thumbnail_url, title }) {
   return (

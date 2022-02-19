@@ -1,6 +1,7 @@
+//establishes how NASA Astronomy Picture Of the Day (APOD) information is displayed and checks if APOD is an image or a video
+
 import React from "react"
-import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css'
+
 
 function InfoCard ({ title, date, url, media_type, explanation }) {
   return (
