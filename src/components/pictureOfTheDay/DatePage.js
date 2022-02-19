@@ -20,8 +20,8 @@ function DatePage() {
   function previousDate(date) {
     
     function getYesterday (date) {
-      let newDate = new Date(date);
-      let yesterday = new Date(newDate.setDate(newDate.getDate() - 1))
+      let newDate = new Date(date); // gets today's date into full javascript text string format
+      let yesterday = new Date(newDate.setDate(newDate.getDate() - 1)) // decreses the date by 1 day to yesterday
       let tempYesterday = new Date(
         yesterday.getTime() -
         yesterday.getTimezoneOffset() * 60000
@@ -58,18 +58,29 @@ function DatePage() {
 
   return (
     <section className="section">
+      <section className="level">
+        <Link to={previousDate(date)}> <img className="prevArrowIcon" src="./images/nextIcon.png" alt="previousIcon" /></Link>
+      <section className="mainContent">
       <div className="container">
         <h1>Here is the day's Nasa image</h1>
       
         <Link to = "/calendar">{"⬅ Back to calendar"}</Link>
-        <Link to={previousDate(date)}> Previous Page</Link>
-        <Link to={nextDate(date)}> Next Page</Link>
+   
         {apod ? <InfoCard {...apod} /> : <p>Loading image from space...</p>}
       </div>
       <div className="has-text-centered">
         <img style={{ padding: `2rem` }} width="350"
           height="175" src="https://media4.giphy.com/media/l0Iych4GHWMRxci2I/giphy.gif?cid=790b761194122cfca4d97229dc5a95369c32bf677d08d9ad&rid=giphy.gif&ct=g" alt="space dog"/>
       </div>
+      </section>
+<Link to={nextDate(date)}>
+  <img
+            className="nextArrowIcon"
+    src='https://e7.pngegg.com/pngimages/361/489/png-clipart-blue-and-white-arrow-logo-bullet-computer-icons-arrow-next-button-blue-angle.png'
+    alt='nextIcon'
+  />
+</Link>
+</section>
       <footer>
         <div className="container">
           <div className="content has-text-centered">
