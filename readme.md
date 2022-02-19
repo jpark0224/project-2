@@ -18,7 +18,7 @@ Our app had to do the following:
 
 ## **Technologies** Used
 We used the following technologies:
-* **[React](https://reactjs.org/)** - allowed us to deplop a single page application
+* **[React](https://reactjs.org/)** - allowed us to develop a single page application
 * **[ReactRouter](https://reactrouter.com/)**
 * **[React-Calendar](https://github.com/wojtekmaj/react-calendar)** - provided a library of functions and settings that facilitated calendar design
 * **[Bulma](https://bulma.io/)** - we imported this CSS library to help with styling. It was the CSS library we'd worked with a bit in class, and was fun to explore. 
