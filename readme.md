@@ -39,7 +39,7 @@ We used the following technologies:
     
 * We are also more comfortable with reading documentation and see the value in doing this before diving into a project using, for example, a library. When we were comparing the documentation for calendar libraries, there were vastly different functionalities between the offerings and it was important we used one flexible enough for our needs, but was also great that we used one small and specialised enough that we weren't installing gigantic files or firing complex commands for simple effects.
 
----
+
 
 ## Stretch Goals (for another day)
 * Implement functionality on the "Back to Calendar" button taking the user from the page with the big image back to the month they were on in the calendar.
@@ -52,7 +52,7 @@ We used the following technologies:
 
 * Quiz page for space facts. This would use another API again, to build out the LSS.
 
-----
+
 
 ## Project Timeline 
 
