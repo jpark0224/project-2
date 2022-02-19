@@ -24,42 +24,36 @@ function DatePage() {
       let yesterday = new Date(newDate.setDate(newDate.getDate() - 1)) // decreses the date by 1 day to yesterday
       let tempYesterday = new Date(
         yesterday.getTime() -
-        yesterday.getTimezoneOffset() * 60000
+        yesterday.getTimezoneOffset() * 60000 // ?? :D 
       )
-      return tempYesterday.toISOString().split('T')[0]
+      return tempYesterday.toISOString().split('T')[0] // changes the date to ISO format ie. YYYY-MM-DD as required for the URL
     }
 
     console.log(getYesterday(date))
-    return (`/datepage/${getYesterday(date)}`)
+    return (`/datepage/${getYesterday(date)}`) // returns the ISO formatted date appended to the rest of the URL path
 
-    // console.log('current page is /datepage/'.concat(date))
-    // console.log("we're trying to get to /datepage/".concat(date.substring(0, date.length - 1).concat("1")))
-    // return ("/datepage/".concat(date.substring(0, date.length - 1).concat("1")))
   }
   
   function nextDate(date) {
     function getTomorrow (date) {
-      let newDate = new Date(date);
-      let tomorrow = new Date(newDate.setDate(newDate.getDate() + 1))
+      let newDate = new Date(date); // gets today's date into full javascript text string format
+      let tomorrow = new Date(newDate.setDate(newDate.getDate() + 1)) // increases the date by 1 day to tomorrow
       let tempTomorrow = new Date(
         tomorrow.getTime() -
-        tomorrow.getTimezoneOffset() * 60000
+        tomorrow.getTimezoneOffset() * 60000 // ?? :D 
       )
-      return tempTomorrow.toISOString().split('T')[0]
+      return tempTomorrow.toISOString().split('T')[0] // changes the date to ISO format ie. YYYY-MM-DD as required for the URL
     }
 
     console.log(getTomorrow(date))
-    return (`/datepage/${getTomorrow(date)}`)
+    return (`/datepage/${getTomorrow(date)}`) // returns the ISO formatted date appended to the rest of the URL path
 
-    // console.log("current page is /datepage/".concat(date))
-    // console.log("we're trying to get to /datepage/".concat(date.substring(0, date.length - 1).concat("5")))
-    // return ("/datepage/".concat(date.substring(0, date.length - 1).concat("5")))
   }
 
   return (
     <section className="section">
       <section className="level">
-        <Link to={previousDate(date)}> <img className="prevArrowIcon" src="./images/nextIcon.png" alt="previousIcon" /></Link>
+        <Link to={previousDate(date)}> <img className="prevArrowIcon" src="http://www.clker.com/cliparts/9/n/3/i/r/n/blue-go-previous-md.png" alt="previousIcon" /></Link>
       <section className="mainContent">
       <div className="container">
         <h1>Here is the day's Nasa image</h1>
@@ -76,7 +70,7 @@ function DatePage() {
 <Link to={nextDate(date)}>
   <img
             className="nextArrowIcon"
-    src='https://e7.pngegg.com/pngimages/361/489/png-clipart-blue-and-white-arrow-logo-bullet-computer-icons-arrow-next-button-blue-angle.png'
+            src='http://www.clker.com/cliparts/1/c/w/o/m/v/blue-go-next-md.png'
     alt='nextIcon'
   />
 </Link>
