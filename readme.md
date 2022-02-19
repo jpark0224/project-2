@@ -4,7 +4,7 @@
 
 * For our second project in the GA Software Engineering Immersive Program, we had to **build a React application** that consumes a **public API**. We decided to build a calendar using  **[React-Calendar Library](https://blog.logrocket.com/react-calendar-tutorial-build-customize-calendar/)** that consumes **[NASA's APOD (Astronomy Picture of the Day) API](https://api.nasa.gov/)**. Our calendar shows a thumbnail image of the NASA image for a given date on the calendar. Each date on the calendar links to the day's full image and explanation of the image. This explanation is also pulled from the API. 
 
-### Technical aspects of our project  
+### Technical aspects 
 
 Our app had to do the following:
 
@@ -16,21 +16,18 @@ Our app had to do the following:
 * **Extra's we added** - we imported the React-Calendar Library 
 
 
-## Explanations of the **technologies** used
+## **Technologies** Used
 We used the following technologies:
 * **[React](https://reactjs.org/)** - allowed us to deplop a single page application
 * **[ReactRouter](https://reactrouter.com/)**
 * **[React-Calendar](https://github.com/wojtekmaj/react-calendar)** - provided a library of functions and settings that facilitated calendar design
 * **[Bulma](https://bulma.io/)** - we imported this CSS library to help with styling. It was the CSS library we'd worked with a bit in class, and was fun to explore. 
 
-## A couple of paragraphs about the **general approach you took**
+## **General approach we took**
 * Firstly, we defined the basic project, and then took that concept and wireframed the idea. Here we built out what functionality we'd implement, and what components we needed on the screen. This stage really helped us to define our MVP and the basic files we would work on.
 * Our general approach then was to split out the work, each knowing what the component should do and asking / explaining when we got stuck. 
 
-## **Installation instructions** for any dependencies
-* Here's the link to our **wireframes** – sketches of major views / interfaces in your application
-
-## Descriptions of any **unsolved problems** or **major hurdles** your team had to overcome
+## **Unsolved Problems** and **Major hurdles** 
 * During our project we had a couple of obstacles to overcome.
 * Since we were using a library as well as an API - a calendar library and a NASA images API - we had to get those two to play nicely together. In the beginning, normal images would load on the calendar but the NASA API images wouldn't. We overcame this by adding a 'loading' image, which would show while the NASA image URLs were still downloading. This simple check ensured that as soon as the data was fetched, the images would show, as React would re-load the page. It also helped with our issue that the API load was slow. This is still an ongoing issue that to load the data for a whole month, as we do for the calendar page, takes a noticable time. Although we could not speed this up due to API limitations, our loading images minimise the impact.
     
@@ -44,8 +41,10 @@ We used the following technologies:
 
 ---
 
-## Stretch Goals if we had more time 
+## Stretch Goals (for another day)
 * Implement functionality on the "Back to Calendar" button taking the user from the page with the big image back to the month they were on in the calendar.
+
+* Disable the next button when APOD data is unavailble. (e.g. dates in the future)
 
 * Styling: If we had more time we'd ensure the footer was stuck to the bottom of the screen on each page, and also keep changing the styling of the calendar. 
 
@@ -53,12 +52,7 @@ We used the following technologies:
 
 * Quiz page for space facts. This would use another API again, to build out the LSS.
 
-
----
-
-
-
----
+----
 
 ## Project Timeline 
 

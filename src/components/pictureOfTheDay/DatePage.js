@@ -21,12 +21,12 @@ function DatePage() {
     
     function getYesterday (date) {
       let newDate = new Date(date); // gets today's date into full javascript text string format
-      let yesterday = new Date(newDate.setDate(newDate.getDate() - 1)) // decreses the date by 1 day to yesterday
+      let yesterday = new Date(newDate.setDate(newDate.getDate() - 1)) // decreases the date by 1 day to yesterday
       let tempYesterday = new Date(
         yesterday.getTime() -
-        yesterday.getTimezoneOffset() * 60000 // ?? :D 
+        yesterday.getTimezoneOffset() * 60000 // adjusts the date to offset issues with British Summer Time
       )
-      return tempYesterday.toISOString().split('T')[0] // changes the date to ISO format ie. YYYY-MM-DD as required for the URL
+      return tempYesterday.toISOString().split('T')[0] // changes the date to ISO format and removes the last part after 'T' ie. YYYY-MM-DD as required for the URL
     }
 
     console.log(getYesterday(date))
@@ -40,9 +40,9 @@ function DatePage() {
       let tomorrow = new Date(newDate.setDate(newDate.getDate() + 1)) // increases the date by 1 day to tomorrow
       let tempTomorrow = new Date(
         tomorrow.getTime() -
-        tomorrow.getTimezoneOffset() * 60000 // ?? :D 
+        tomorrow.getTimezoneOffset() * 60000 // adjusts the date to offset issues with British Summer Time
       )
-      return tempTomorrow.toISOString().split('T')[0] // changes the date to ISO format ie. YYYY-MM-DD as required for the URL
+      return tempTomorrow.toISOString().split('T')[0] // changes the date to ISO format and removes the last part after 'T' ie. YYYY-MM-DD as required for the URL
     }
 
     console.log(getTomorrow(date))
@@ -56,11 +56,11 @@ function DatePage() {
         <Link to={previousDate(date)}> <img className="prevArrowIcon" src="http://www.clker.com/cliparts/9/n/3/i/r/n/blue-go-previous-md.png" alt="previousIcon" /></Link>
       <section className="mainContent">
       <div className="container">
-        <h1>Here is the day's Nasa image</h1>
+        <h1>Here is the day's Nasa image</h1> {/* Heading for the page */}
       
-        <Link to = "/calendar">{"⬅ Back to calendar"}</Link>
+        <Link to = "/calendar">{"⬅ Back to calendar"}</Link> {/* Link to go back to the calendar */}
    
-        {apod ? <InfoCard {...apod} /> : <p>Loading image from space...</p>}
+        {apod ? <InfoCard {...apod} /> : <p>Loading image from space...</p>} {/* Shows the Infocard, with a quick para while our API data loads */}
       </div>
       <div className="has-text-centered">
         <img style={{ padding: `2rem` }} width="350"
