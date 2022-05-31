@@ -63,12 +63,14 @@ Our group wanted to focus on space as a theme, so we decided to build a calendar
 * As a React Library, React Calendar comes with a set of out-of-the-box functions (ex. onChange() or onClick()) and settings (ex. minDetail or showNeighboringMonth). On our Calendar Page, we had the opportunity to explore and play with this functionality. 
 
 * To better illustrate this point, below I've included the Calendar section of our CalendarPage React component:
-<!-- //<Calendar  // This is the calendar library. The lines below determine how our customized library works
+```
+
+<Calendar  // This is the calendar library. The lines below determine how our customized library works
           // FUNCTIONS            These pass the above defined functions from the CalendarPage.js component into the Calendar library functionality
           onChange={onChange}
           onClickDay={onClickDay}
           value={value}
-          onActiveStartDateChange={onActiveStartDateChange} -->
+          onActiveStartDateChange={onActiveStartDateChange}
 
           // SETTINGS             Below are simply parameters affecting how the calendar is displayed
           minDetail="month" // this means users can only see a month view (change to year to have year and month options)
@@ -81,11 +83,12 @@ Our group wanted to focus on space as a theme, so we decided to build a calendar
           className={['react-calendar']}
           tileClassName="tile"
         />
-
+```
 * The piece of our CalendarPage component that I worked on was onClickDay(). This is the function called when a specific day of the calendar is clicked. This function allows a user to move from the calendar to the DatePage component that renders the NASA APOD along with an imgage description. And this required us to transform the target value date that the calendar immediately gives into a string that could be passed as a parameter using the React useParams method into our API call and as an ":id" in the http request, which required researching and finding the toISOString() method. For example, the e.target.value date automatically provided by React Calendar is, for example, "Wed Apr 07 2021 00:00:00 GMT+0000" and we needed something like 2021-04-07 (YYY-MM-DD). I have to credit to my teammate Julie Park with figuring this one out and finding the toISOString() method on StackOverflow. 
 
 *Here's the commented code for onClickDay()*: 
 
+```
   function onClickDay(value) {
     // points to the DatePage component
     const calendarDate = new Date(
@@ -97,12 +100,17 @@ Our group wanted to focus on space as a theme, so we decided to build a calendar
     navigate(`/datepage/${dateToString}`)
   }
 
+```
 * With the correctly formated string, we are able to use it in the path for the Route that renders our DatePage component. 
+```
 
  <Route path="/datepage/:date" element={<DatePage />}/>
 
+ ```
+
 * The correctly formatted date is then passed through the DatePage component as a parameter using the React useParams() method that is then passed through the API request as seen below:  
 
+```
 function DatePage() {
   const { date } = useParams();
   const [apod, setApod] = React.useState(undefined);
@@ -116,6 +124,8 @@ function DatePage() {
     }
     fetchApod();
   }, [date]);
+
+```
 
 * In addition to working on the two above functions, I also took the lead on styling and deployment for our project. This was my first time working with a styling library, so I watched a Traversy Media tutorial on the basics and read through the documentation.  
 
