@@ -3,8 +3,15 @@
 
 For our second project in the GA Software Engineering Immersive Program, we had to **build a React application** that consumes a **public API**. We decided to build a calendar using  **[React-Calendar Library](https://blog.logrocket.com/react-calendar-tutorial-build-customize-calendar/)** that consumes **[NASA's APOD (Astronomy Picture of the Day) API](https://api.nasa.gov/)**. Our calendar shows a thumbnail image of the NASA image for a given date on the calendar. Each date on the calendar links to the day's full image and explanation of the image. This explanation is also pulled from the API. 
 
-![](images/wireframe_2.jpg)
+Here's an image of our wireframe that we made during planning. 
 
+![](./src/images/wireframe_2.jpg)
+
+Here's the final version: 
+
+![](./src/images/project-2-gif-1.gif)
+
+![](./src/images/project-2-gif-2.gif)
 
 ### Technical aspects 
 
@@ -25,9 +32,11 @@ We used the following technologies:
 * **[React-Calendar](https://github.com/wojtekmaj/react-calendar)** - provided a library of functions and settings that facilitated calendar design
 * **[Bulma](https://bulma.io/)** - we imported this CSS library to help with styling. It was the CSS library we'd worked with a bit in class, and was fun to explore. 
 
-## **General approach we took**
+## Process 
 * Firstly, we defined the basic project, and then took that concept and wireframed the idea. Here we built out what functionality we'd implement, and what components we needed on the screen. This stage really helped us to define our MVP and the basic files we would work on.
 * Our general approach then was to split out the work, each knowing what the component should do and asking / explaining when we got stuck. 
+
+
 
 ## Challenges
 * During our project we had a couple of obstacles to overcome.
