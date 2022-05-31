@@ -66,18 +66,22 @@ Our group wanted to focus on space as a theme, so we decided to build a calendar
 ```
 
 <Calendar  // This is the calendar library. The lines below determine how our customized library works
-          // FUNCTIONS            These pass the above defined functions from the CalendarPage.js component into the Calendar library functionality
+          // FUNCTIONS            
+          These pass the above defined functions from the CalendarPage.js 
+          component into the Calendar library functionality
           onChange={onChange}
           onClickDay={onClickDay}
           value={value}
           onActiveStartDateChange={onActiveStartDateChange}
 
-          // SETTINGS             Below are simply parameters affecting how the calendar is displayed
-          minDetail="month" // this means users can only see a month view (change to year to have year and month options)
+          // SETTINGS  Below are simply parameters affecting how the calendar is displayed
+          minDetail="month" // this means users can only see a month view 
+          (change to year to have year and month options)
           maxDate={new Date()} // this stops users selecting future dates
           tileContent={decideImage}
 
-          selectRange={true} // this allows users to select a range of dates - we will use this to show the pictures from all of these dates
+          selectRange={true} // this allows users to select a range of dates 
+          - we will use this to show the pictures from all of these dates
           defaultView="month"
           showNeighboringMonth={false} // this ensures we only show dates from the current month
           className={['react-calendar']}
@@ -94,7 +98,8 @@ Our group wanted to focus on space as a theme, so we decided to build a calendar
     const calendarDate = new Date(
       value.getTime() -
       value.getTimezoneOffset() * 60000
-    ).toISOString().split('T')[0] // adjust the clicked date to offset issues with British Summer Time and format it into YYYY-MM-DD
+    ).toISOString().split('T')[0] // adjust the clicked date to offset issues with British Summer Time 
+    and format it into YYYY-MM-DD
     const dateToString = calendarDate.toString() // convert the date into string
     // takes a user to a corresponding date page
     navigate(`/datepage/${dateToString}`)
