@@ -41,16 +41,7 @@ function CalendarPage() {
     // this is allowing to navigate the calendar by clicking eg. a day from a different month
   }
 
-  function onClickDay(value) {
-    // point to the DatePage component
-    const calendarDate = new Date(
-      value.getTime() -
-      value.getTimezoneOffset() * 60000
-    ).toISOString().split('T')[0] // adjust the clicked date to offset issues with British Summer Time and format it into YYYY-MM-DD
-    const dateToString = calendarDate.toString() // convert the date into string
-    // take an user to a corresponding date page
-    navigate(`/datepage/${dateToString}`)
-  }
+ 
 
   function onActiveStartDateChange(action) {
     let startDate = new Date(
