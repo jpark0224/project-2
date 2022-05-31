@@ -1,11 +1,9 @@
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #2: LSS (Local Space Station) React Web Application 
 
 
-## Project Brief
-
 For our second project in the GA Software Engineering Immersive Program, we had to **build a React application** that consumes a **public API**. We decided to build a calendar using  **[React-Calendar Library](https://blog.logrocket.com/react-calendar-tutorial-build-customize-calendar/)** that consumes **[NASA's APOD (Astronomy Picture of the Day) API](https://api.nasa.gov/)**. Our calendar shows a thumbnail image of the NASA image for a given date on the calendar. Each date on the calendar links to the day's full image and explanation of the image. This explanation is also pulled from the API. 
 
-![](images/wireframe_2)
+![](images/wireframe_2.jpg)
 
 
 ### Technical aspects 
@@ -31,7 +29,7 @@ We used the following technologies:
 * Firstly, we defined the basic project, and then took that concept and wireframed the idea. Here we built out what functionality we'd implement, and what components we needed on the screen. This stage really helped us to define our MVP and the basic files we would work on.
 * Our general approach then was to split out the work, each knowing what the component should do and asking / explaining when we got stuck. 
 
-## **Unsolved Problems** and **Major hurdles** 
+## Challenges
 * During our project we had a couple of obstacles to overcome.
 * Since we were using a library as well as an API - a calendar library and a NASA images API - we had to get those two to play nicely together. In the beginning, normal images would load on the calendar but the NASA API images wouldn't. We overcame this by adding a 'loading' image, which would show while the NASA image URLs were still downloading. This simple check ensured that as soon as the data was fetched, the images would show, as React would re-load the page. It also helped with our issue that the API load was slow. This is still an ongoing issue that to load the data for a whole month, as we do for the calendar page, takes a noticable time. Although we could not speed this up due to API limitations, our loading images minimise the impact.
     
@@ -43,9 +41,9 @@ We used the following technologies:
     
 * We are also more comfortable with reading documentation and see the value in doing this before diving into a project using, for example, a library. When we were comparing the documentation for calendar libraries, there were vastly different functionalities between the offerings and it was important we used one flexible enough for our needs, but was also great that we used one small and specialised enough that we weren't installing gigantic files or firing complex commands for simple effects.
 
+## Key learnings 
 
-
-## Stretch Goals (for another day)
+## If we'd had more time 
 * Implement functionality on the "Back to Calendar" button taking the user from the page with the big image back to the month they were on in the calendar.
 
 * Disable the next button when APOD data is unavailble. (e.g. dates in the future)
