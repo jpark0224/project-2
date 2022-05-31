@@ -9,9 +9,9 @@ function CalendarPage() {
   const navigate = useNavigate()
   const [apod, setApod] = React.useState(undefined);
   //apod = Astronomy Picture of the Day (abbreviation used by the NASA APOD API)
-  
+
   let date = new Date() // get today's date
-   let firstDateOfCurrentMonth = new Date(date.getFullYear(), date.getMonth(), 1) // get the first date of current month
+  let firstDateOfCurrentMonth = new Date(date.getFullYear(), date.getMonth(), 1) // get the first date of current month
   let summerTimeAdjustedFirstDate = new Date(
     firstDateOfCurrentMonth
       .getTime() - firstDateOfCurrentMonth.getTimezoneOffset() * 60000
@@ -33,7 +33,7 @@ function CalendarPage() {
       const data = await resp.json();
       setApod(data);
     }
-     fetchApod();
+    fetchApod();
   }, [formattedStartDate, formattedEndDate]);
 
   function onChange(nextValue) {
@@ -41,32 +41,41 @@ function CalendarPage() {
     // this is allowing to navigate the calendar by clicking eg. a day from a different month
   }
 
- 
+  function onClickDay(value) {
+    // point to the DatePage component
+    const calendarDate = new Date(
+      value.getTime() -
+      value.getTimezoneOffset() * 60000
+    ).toISOString().split('T')[0] // adjust the clicked date to offset issues with British Summer Time and format it into YYYY-MM-DD
+    const dateToString = calendarDate.toString() // convert the date into string
+    // take an user to a corresponding date page
+    navigate(`/datepage/${dateToString}`)
+  }
 
   function onActiveStartDateChange(action) {
     let startDate = new Date(
-  action.activeStartDate.getTime() -
-    action.activeStartDate.getTimezoneOffset() * 60000
-) // adjust the start date of the month to offset issues with British Summer Time 
+      action.activeStartDate.getTime() -
+      action.activeStartDate.getTimezoneOffset() * 60000
+    ) // adjust the start date of the month to offset issues with British Summer Time 
     let formattedStartDate = startDate.toISOString().split('T')[0] // format he adjusted date into YYYY-MM-DD
     let lastDate = new Date(startDate.getFullYear() // fetches the year
-, startDate.getMonth()
- + 1, 0) // get the last date of the month
+      , startDate.getMonth()
+      + 1, 0) // get the last date of the month
     let formattedLastDate = new Date(
-  lastDate.getTime() - lastDate.getTimezoneOffset() * 60000
-).toISOString().split("T")[0] // format the last date of the month into YYYY-MM-DD
+      lastDate.getTime() - lastDate.getTimezoneOffset() * 60000
+    ).toISOString().split("T")[0] // format the last date of the month into YYYY-MM-DD
     setApod(undefined); // reset the images previously fetched in calendar
     setStartDate(formattedStartDate) // set start date state into the current start date
     setEndDate(formattedLastDate)
     // set end date state into the current end date
-  } 
+  }
 
   function decideImage({ date }) {
     //this draws the images into the calendar from CalendarImages component
     if (date <= new Date()) {
       return (
         <>
-          {apod ? <CalendarImages {...apod[date.getDate() - 1]} /> : <img className="loadingImg" src="https://cdn.dribbble.com/users/1260892/screenshots/6529031/planets.gif" alt="loading"/> }
+          {apod ? <CalendarImages {...apod[date.getDate() - 1]} /> : <img className="loadingImg" src="https://cdn.dribbble.com/users/1260892/screenshots/6529031/planets.gif" alt="loading" />}
         </>
       )
     }
@@ -77,30 +86,30 @@ function CalendarPage() {
       <h1 style={{ margin: `2rem` }} className="title bold has-text-centered">Space Calendar </h1>
       <h2 className="subtitle has-text-centered">✨ our universe is beautiful✨  click on one of NASA's images of the day to learn more! 🚀</h2>
       <div className="calendarContainer">
-      <Calendar                 // This is the calendar library. The lines below all edit how the library works
-        // FUNCTIONS            These pass the above functions into the Calendar library functionality
-        onChange={onChange}
-        onClickDay={onClickDay}
-        value={value}
-        onActiveStartDateChange={onActiveStartDateChange}
+        <Calendar                 // This is the calendar library. The lines below all edit how the library works
+          // FUNCTIONS            These pass the above functions into the Calendar library functionality
+          onChange={onChange}
+          onClickDay={onClickDay}
+          value={value}
+          onActiveStartDateChange={onActiveStartDateChange}
 
-        // SETTINGS             These are simply parameters affecting how the calendar is displayed
-        minDetail="month" // this means users can only see a month view (change to year to have year and month options)
-        maxDate={new Date()} // this stops users selecting future dates
-        tileContent={decideImage}
+          // SETTINGS             These are simply parameters affecting how the calendar is displayed
+          minDetail="month" // this means users can only see a month view (change to year to have year and month options)
+          maxDate={new Date()} // this stops users selecting future dates
+          tileContent={decideImage}
 
-        selectRange={true} // this allows users to select a range of dates - we will use this to show the pictures from all of these dates
-        defaultView="month"
-        showNeighboringMonth={false} // this ensures we only show dates from the current month
-        className={['react-calendar']}
-        tileClassName="tile"
+          selectRange={true} // this allows users to select a range of dates - we will use this to show the pictures from all of these dates
+          defaultView="month"
+          showNeighboringMonth={false} // this ensures we only show dates from the current month
+          className={['react-calendar']}
+          tileClassName="tile"
         />
-        </div>
+      </div>
       <footer>
         <div className="content has-text-centered">
-            <p style={{padding: `1rem`}}>✨ Made with love by Julie, Laura, and Rachel 🚀 project 2 GA-sei-flex-22-ldn 🌙 </p>
-          </div>
-      </footer> 
+          <p style={{ padding: `1rem` }}>✨ Made with love by Julie, Laura, and Rachel 🚀 project 2 GA-sei-flex-22-ldn 🌙 </p>
+        </div>
+      </footer>
     </>
   );
 }
