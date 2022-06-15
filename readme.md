@@ -37,11 +37,12 @@ Our app had to do the following:
 
 
 
-## The LSS (Local Space Station)
+# The LSS (Local Space Station)
 
 Our group wanted to focus on space as a theme, so we decided to build a calendar using  **[React-Calendar Library](https://blog.logrocket.com/react-calendar-tutorial-build-customize-calendar/)** that consumes **[NASA's APOD (Astronomy Picture of the Day) API](https://api.nasa.gov/)**. Our calendar shows a thumbnail image of the NASA image for a given date on the calendar. Each date on the calendar links to the day's full image and explanation of the image. This explanation is also pulled from the API. 
 
 ![](./src/images/project-2-gif-2.gif)
+
 
 ### Check out the deployed version here: 
 
@@ -141,14 +142,14 @@ function DatePage() {
 
 * Since we had been informed that deployment could take some time, I wanted to make sure I understood how it worked, so jumped into working on the final day of the project. Also, as we had used a repository on my GitHub account, it made sense that I took the lead on deployment. 
 
-## Wins
+# Wins
 There were a lot of firsts with this project, and our group handled them all really well. Here are some of our wins:
 First time implementing a React Calendar library. 
 Successfully manipulating JavaScript dates.
 First time installing and working with a styling library (Bulma). 
 Researching an API  that was relatively easy to work with, allowed unlimited requests, and met the needs of our project. 
 
-## Challenges
+# Challenges
 * During our project we had a couple of obstacles to overcome and these can be broken into Technical and Team Challenges 
 
 ### Technical Challenges
@@ -171,7 +172,7 @@ We also swapped tasks when stuck on something, which helped to get fresh eyes on
 * At times there were only 2 clear technical tasks to work on between the 3 of us. This is why I went ahead and spent time learning Bulma and working with a styling library. 
 
     
-## Key learnings 
+# Key learnings 
 
 * How to implement a React library, such as the React Calendar library. 
 * Using resources like StackOverflow to figure out working with dates in JavaScript. 
@@ -179,7 +180,7 @@ We also swapped tasks when stuck on something, which helped to get fresh eyes on
 * Project deployment on Netlify.
 * Working in a group of three can be difficult, but being clear on how everyone communicates from the start can be the best plan of action. 
 
-## If we'd had more time...
+# If we'd had more time...
 
 #### If we'd had more time, we would have liked to have done the following: 
 
