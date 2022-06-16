@@ -65,7 +65,7 @@ Our group wanted to focus on space as a theme, so we decided to build a calendar
 ## Development
 * Two of our main components were the CalendarPage.js, which shows our calendar that goes as far back as the NASA Astronomy Picture of the Day (APOD) API, and the DatePage.js, which displays the APOD and a description of that image. Here I’ll talk about my role in coding these components. 
 
-### Calendar Page
+### CalendarPage
 
 * As a React Library, React Calendar comes with a set of out-of-the-box functions (ex. onChange() or onClick()) and settings (ex. minDetail or showNeighboringMonth). On our Calendar Page, we had the opportunity to explore and play with this functionality. 
 
@@ -149,7 +149,7 @@ Successfully manipulating JavaScript dates.
 First time installing and working with a styling library (Bulma). 
 Researching an API  that was relatively easy to work with, allowed unlimited requests, and met the needs of our project. 
 
-# Challenges
+## Challenges
 * During our project we had a couple of obstacles to overcome and these can be broken into Technical and Team Challenges 
 
 ### Technical Challenges
@@ -172,7 +172,7 @@ We also swapped tasks when stuck on something, which helped to get fresh eyes on
 * At times there were only 2 clear technical tasks to work on between the 3 of us. This is why I went ahead and spent time learning Bulma and working with a styling library. 
 
     
-# Key learnings 
+## Key learnings 
 
 * How to implement a React library, such as the React Calendar library. 
 * Using resources like StackOverflow to figure out working with dates in JavaScript. 
@@ -180,7 +180,7 @@ We also swapped tasks when stuck on something, which helped to get fresh eyes on
 * Project deployment on Netlify.
 * Working in a group of three can be difficult, but being clear on how everyone communicates from the start can be the best plan of action. 
 
-# If we'd had more time...
+## If we'd had more time...
 
 #### If we'd had more time, we would have liked to have done the following: 
 
