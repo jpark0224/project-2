@@ -142,7 +142,7 @@ function DatePage() {
 
 * Since we had been informed that deployment could take some time, I wanted to make sure I understood how it worked, so jumped into working on the final day of the project. Also, as we had used a repository on my GitHub account, it made sense that I took the lead on deployment. 
 
-# Wins
+## Wins
 There were a lot of firsts with this project, and our group handled them all really well. Here are some of our wins:
 - First time implementing a React Calendar library. 
 - Successfully manipulating JavaScript dates.
