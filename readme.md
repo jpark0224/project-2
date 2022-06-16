@@ -144,10 +144,10 @@ function DatePage() {
 
 # Wins
 There were a lot of firsts with this project, and our group handled them all really well. Here are some of our wins:
-First time implementing a React Calendar library. 
-Successfully manipulating JavaScript dates.
-First time installing and working with a styling library (Bulma). 
-Researching an API  that was relatively easy to work with, allowed unlimited requests, and met the needs of our project. 
+- First time implementing a React Calendar library. 
+- Successfully manipulating JavaScript dates.
+- First time installing and working with a styling library (Bulma). 
+- Researching an API  that was relatively easy to work with, allowed unlimited requests, and met the needs of our project. 
 
 ## Challenges
 * During our project we had a couple of obstacles to overcome and these can be broken into Technical and Team Challenges 
