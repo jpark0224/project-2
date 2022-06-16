@@ -2,14 +2,15 @@
 
 This is my second full coding project completed for the the **General Assembly Software Engineering Immersive Part-Time Course** (Nov 2021 - May 2022). This project was a pair-coded project. I was part of a 3-person group. 
 
-**Timeframe**
-
-Project kicked off 12 Feb 2022, and we presented 19 Feb 2022. There were 20 hours of course time to complete it. 
 
 ![](./src/images/project-2-gif-1.gif)
 
 ## Goal 
 A pair-coded project to develop a React app that consumed an external API. 
+
+**Timeframe**
+
+Project 2 kicked off 12 Feb 2022, and we presented 19 Feb 2022. We had 20 hours of course time to complete it. 
 
 ## Project Brief 
 
@@ -63,7 +64,7 @@ Our group wanted to focus on space as a theme, so we decided to build a calendar
 * We did not use Trello or any sort of planning app, which will, as you might imagine, be discussed in the Challenges section. 
 
 ## Development
-* Two of our main components were the CalendarPage.js, which shows our calendar that goes as far back as the NASA Astronomy Picture of the Day (APOD) API, and the DatePage.js, which displays the APOD and a description of that image. Here I’ll talk about my role in coding these components. 
+Two of our main components were the CalendarPage.js, which shows our calendar that goes as far back as the NASA Astronomy Picture of the Day (APOD) API, and the DatePage.js, which displays the APOD and a description of that image. Here I’ll talk about my role in coding these components. 
 
 ### CalendarPage
 
@@ -93,7 +94,7 @@ tileClassName="tile"
 
 ```
 
-* The piece of our CalendarPage component that I worked on was onClickDay(). This is the function called when a specific day of the calendar is clicked. This function allows a user to move from the calendar to the DatePage component that renders the NASA APOD along with an image description. And this required us to transform the target value date that the calendar immediately gives into a string that could be passed as a parameter using the React useParams method into our API call and as an ":id" in the http request, which required researching and finding the toISOString() method. For example, the e.target.value date automatically provided by React Calendar is, for example, "Wed Apr 07 2021 00:00:00 GMT+0000" and we needed something like 2021-04-07 (YYYY-MM-DD). I have to credit my teammate Julie Park with figuring this one out and finding the toISOString() method on StackOverflow. 
+The piece of our CalendarPage component that I worked on was onClickDay(). This is the function called when a specific day of the calendar is clicked. This function allows a user to move from the calendar to the DatePage component that renders the NASA APOD along with an image description. And this required us to transform the target value date that the calendar immediately gives into a string that could be passed as a parameter using the React useParams method into our API call and as an ":id" in the http request, which required researching and finding the toISOString() method. For example, the e.target.value date automatically provided by React Calendar is, for example, "Wed Apr 07 2021 00:00:00 GMT+0000" and we needed something like 2021-04-07 (YYYY-MM-DD). I have to credit my teammate Julie Park with figuring this one out and finding the toISOString() method on StackOverflow. 
 
 *Here's the commented code for onClickDay()*: 
 ```
@@ -117,7 +118,7 @@ tileClassName="tile"
 
  ```
 
-* The correctly formatted date is then passed through the DatePage component as a parameter using the React useParams() method that is then passed through the API request as seen below:  
+The correctly formatted date is then passed through the DatePage component as a parameter using the React useParams() method that is then passed through the API request as seen below:  
 
 ```
 function DatePage() {
@@ -136,21 +137,21 @@ function DatePage() {
 
   ```
 
-* In addition to working on the two above functions, I also took the lead on styling and deployment for our project. This was my first time working with a styling library, so I watched a Traversy Media tutorial on the basics and read through the documentation.  The styling of the DatePage component is the result of me working with Bulma cards and columns. 
+In addition to working on the two above functions, I also took the lead on styling and deployment for our project. This was my first time working with a styling library, so I watched a Traversy Media tutorial on the basics and read through the documentation.  The styling of the DatePage component is the result of me working with Bulma cards and columns. 
 
-### Deployment 
+## Deployment 
 
-* Since we had been informed that deployment could take some time, I wanted to make sure I understood how it worked, so jumped into working on the final day of the project. Also, as we had used a repository on my GitHub account, it made sense that I took the lead on deployment. 
+Since we had been informed that deployment could take some time, I wanted to make sure I understood how it worked, so I jumped into working on it first thing the final day of the project. Also, as we had used a repository on my GitHub account, it made sense that I took the lead on deployment. 
 
 ## Wins
 There were a lot of firsts with this project, and our group handled them all really well. Here are some of our wins:
 - First time implementing a React Calendar library. 
-- Successfully manipulating JavaScript dates.
+- First time manipulating JavaScript dates.
 - First time installing and working with a styling library (Bulma). 
-- Researching an API  that was relatively easy to work with, allowed unlimited requests, and met the needs of our project. 
+- First time researching an API  that was relatively easy to work with, allowed unlimited requests, and met the needs of our project. 
 
 ## Challenges
-* During our project we had a couple of obstacles to overcome and these can be broken into Technical and Team Challenges 
+During our project we had a couple of obstacles to overcome and these can be broken into Technical and Team Challenges 
 
 ### Technical Challenges
 
